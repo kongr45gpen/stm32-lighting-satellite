@@ -1,5 +1,5 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration name="OCD stm32-lighting-satellite" type="com.jetbrains.cidr.embedded.openocd.conf.type" factoryName="com.jetbrains.cidr.embedded.openocd.conf.factory" PASS_PARENT_ENVS_2="true" PROJECT_NAME="stm32-lighting-satellite" TARGET_NAME="stm32-lighting-satellite.elf" RUN_TARGET_PROJECT_NAME="stm32-lighting-satellite" RUN_TARGET_NAME="stm32-lighting-satellite.elf">
+  <configuration name="OCD stm32-lighting-satellite" type="com.jetbrains.cidr.embedded.openocd.conf.type" factoryName="com.jetbrains.cidr.embedded.openocd.conf.factory" PASS_PARENT_ENVS_2="true" PROJECT_NAME="stm32-lighting-satellite" TARGET_NAME="stm32-lighting-satellite.elf" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="stm32-lighting-satellite" RUN_TARGET_NAME="stm32-lighting-satellite.elf">
     <openocd gdb-port="3333" telnet-port="4444" board-config="board/st_nucleo_l4.cfg" reset-type="INIT" download-type="ALWAYS" />
     <method v="2">
       <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
