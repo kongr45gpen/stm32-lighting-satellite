@@ -43,6 +43,9 @@ file(GLOB_RECURSE SOURCES "startup/*.*" "Drivers/*.*" "Src/*.*")
 # Support for FreeRTOS
 file(GLOB FREERTOS_SOURCES "Lib/freertos/*.c" "Lib/freertos/portable/GCC/ARM_CM4F/port.c" "Lib/freertos/portable/MemMang/heap_2.c")
 
+# Other libraries
+file (GLOB LIBRARY_SOURCES "Lib/nrf24l01/*.c")
+
 include_directories(Inc Drivers/STM32L4xx_HAL_Driver/Inc Drivers/STM32L4xx_HAL_Driver/Inc/Legacy Drivers/CMSIS/Device/ST/STM32L4xx/Include Drivers/CMSIS/Include)
 
 add_executable(${PROJECT_NAME}.elf ${SOURCES} ${FREERTOS_SOURCES} ${LIBRARY_SOURCES} ${EXTRA_SOURCES} ${LINKER_SCRIPT})
@@ -62,4 +65,5 @@ Building ${BIN_FILE}")
 include_directories(
         "${PROJECT_SOURCE_DIR}/Lib/freertos/include"
         "${PROJECT_SOURCE_DIR}/Lib/freertos/portable/GCC/ARM_CM4F"
+        "${PROJECT_SOURCE_DIR}/Lib/nrf24l01"
 )
