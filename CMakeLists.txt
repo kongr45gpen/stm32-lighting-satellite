@@ -40,6 +40,9 @@ add_definitions(-D__weak=__attribute__\(\(weak\)\) -D__packed=__attribute__\(\(_
 
 file(GLOB_RECURSE SOURCES "startup/*.*" "Drivers/*.*" "Src/*.*")
 
+# Support for FreeRTOS
+file(GLOB FREERTOS_SOURCES "Lib/freertos/*.c" "Lib/freertos/portable/GCC/ARM_CM4F/port.c" "Lib/freertos/portable/MemMang/heap_2.c")
+
 include_directories(Inc Drivers/STM32L4xx_HAL_Driver/Inc Drivers/STM32L4xx_HAL_Driver/Inc/Legacy Drivers/CMSIS/Device/ST/STM32L4xx/Include Drivers/CMSIS/Include)
 
 add_executable(${PROJECT_NAME}.elf ${SOURCES} ${FREERTOS_SOURCES} ${LIBRARY_SOURCES} ${EXTRA_SOURCES} ${LINKER_SCRIPT})
@@ -55,3 +58,8 @@ add_custom_command(TARGET ${PROJECT_NAME}.elf POST_BUILD
         COMMAND ${CMAKE_OBJCOPY} -Obinary $<TARGET_FILE:${PROJECT_NAME}.elf> ${BIN_FILE}
         COMMENT "Building ${HEX_FILE}
 Building ${BIN_FILE}")
+
+include_directories(
+        "${PROJECT_SOURCE_DIR}/Lib/freertos/include"
+        "${PROJECT_SOURCE_DIR}/Lib/freertos/portable/GCC/ARM_CM4F"
+)
